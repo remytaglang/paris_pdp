@@ -1,1 +1,13 @@
+<div class="container" style='margin-bottom: 30px;'>
+  <div class="row">
+    <div class="section-title">
+      <h3>Discover new spots</h3>
+    </div>
+    <% @stores.each do |store| %>
+    <div class='col-md-6 col-xs-12'>
+      <%= render 'shared/cardindex', store: store %>
+    </div>
+    <% end %>
+  </div>
 
+</div>

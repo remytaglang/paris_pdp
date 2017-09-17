@@ -1,0 +1,8 @@
+<figure class="snip0051">
+  <a class='icon-wishlist' data-toggle="modal" data-target="#exampleModalLong<%= store.id %>"><i class='fa fa-heart-o'></i></a>
+  <figcaption>
+      <h2><%= store.name %></h2>
+
+    <p><i class="fa fa-map-marker" aria-hidden="true"></i> <i><%= store.description %></i>, <b><%= store.description %></b><br><%= store.critiques.first.description %><%= link_to 'Read More', store_path(store)%> </p>
+  </figcaption>
+</figure>
