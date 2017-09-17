@@ -1,2 +1,14 @@
-<h1>Stores#new</h1>
-<p>Find me in app/views/stores/new.html.erb</p>
+    <div class="col-xs-12 col-sm-8">
+      <%= simple_form_for(@store) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.simple_fields_for :critiques do |store_critique| %>
+          <%= store_critique.input :description %>
+        <% end %>
+        <%= f.simple_fields_for :categories do |store_category| %>
+          <%= store_category.input :category, collection: ["restaurant", "bar"] %>
+        <% end %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
