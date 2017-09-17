@@ -1,39 +1,6 @@
 Rails.application.routes.draw do
-  get 'categories/index'
 
-  get 'categories/show'
-
-  get 'categories/create'
-
-  get 'categories/new'
-
-  get 'categories/edit'
-
-  get 'categories/destroy'
-
-  get 'critiques/index'
-
-  get 'critiques/show'
-
-  get 'critiques/create'
-
-  get 'critiques/new'
-
-  get 'critiques/edit'
-
-  get 'critiques/destroy'
-
-  get 'stores/index'
-
-  get 'stores/show'
-
-  get 'stores/create'
-
-  get 'stores/new'
-
-  get 'stores/edit'
-
-  get 'stores/destroy'
+  resources :stores, only:[:index, :show, :new, :create, :edit]
 
   devise_for :users
   root to: 'pages#home'

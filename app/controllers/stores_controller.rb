@@ -1,15 +1,21 @@
 class StoresController < ApplicationController
 
   def index
+    @stores = Store.all
   end
 
   def show
   end
 
-  def create
+  def new
+    @store = Store.new
+    @store.critiques.build
+    @store.categories.build
   end
 
-  def new
+  def create
+    @store = Store.new(params_store)
+    @store.save
   end
 
   def edit
@@ -17,4 +23,12 @@ class StoresController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def params_store
+    params.require(:store).permit(:name, :description, critiques_attributes: [:description], categories_attributes: [:category])
+  end
+
+
 end
