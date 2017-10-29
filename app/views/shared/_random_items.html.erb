@@ -1,0 +1,22 @@
+<div class="col-sm-6 col-md-3">
+  <div class="job-item">
+    <div class="job-info">
+      <div class="company-logo">
+        <img src="images/job/1.png" alt="images" class="img-responsive">
+      </div>
+      <span class="tr-title">
+        <a href="#"><%=place.name%></a>
+        <span><p><%= place.critique.first(70) + '... ' %><%= link_to 'Read More', place_path(place)%> </p></span>
+      </span>
+<!--       <ul class="tr-list job-meta">
+        <li><span><i class="fa fa-map-signs" aria-hidden="true"></i></span>San Francisco, CA, US</li>
+        <li><span><i class="fa fa-briefcase" aria-hidden="true"></i></span>Mid Level</li>
+        <li><span><i class="fa fa-money" aria-hidden="true"></i></span>$5,000 - $6,000</li>
+      </ul> -->
+      <div class="time">
+          <a href="#"><span>Full Time</span></a>
+        <span class="pull-right">Posted 23 hours ago</span>
+      </div>
+    </div>
+  </div>
+</div>

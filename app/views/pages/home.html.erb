@@ -1,6 +1,28 @@
 
 <%= render 'shared/banner' %>
 
+  <div class="tr-job-posted section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h1>Quelques établissements</h1>
+      </div>
+      <div class="job-tab">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="hot-jobs">
+            <div class="row">
+              <% @places.each do |place| %>
+                <%= render 'shared/random_items', place: place %>
+              <% end %>
+            </div><!-- /.row -->
+          </div><!-- /.tab-pane -->
+        </div>
+      </div><!-- /.job-tab -->
+    </div><!-- /.container -->
+  </div><!-- /.tr-job-posted -->
+
+
+
+
 
 
 
