@@ -17,22 +17,22 @@ ActiveRecord::Schema.define(version: 20170917170220) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "type"
-    t.integer  "store_id"
+    t.integer  "place_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "category"
-    t.index ["store_id"], name: "index_categories_on_store_id", using: :btree
+    t.index ["place_id"], name: "index_categories_on_place_id", using: :btree
   end
 
   create_table "critiques", force: :cascade do |t|
     t.string   "description"
-    t.integer  "store_id"
+    t.integer  "place_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["store_id"], name: "index_critiques_on_store_id", using: :btree
+    t.index ["place_id"], name: "index_critiques_on_place_id", using: :btree
   end
 
-  create_table "stores", force: :cascade do |t|
+  create_table "places", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(version: 20170917170220) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "categories", "stores"
-  add_foreign_key "critiques", "stores"
+  add_foreign_key "categories", "places"
+  add_foreign_key "critiques", "places"
 end
