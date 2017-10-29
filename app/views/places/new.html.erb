@@ -1,0 +1,14 @@
+    <div class="col-xs-12 col-sm-8">
+      <%= simple_form_for(@place) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.simple_fields_for :critiques do |place_critique| %>
+          <%= place_critique.input :description %>
+        <% end %>
+        <%= f.simple_fields_for :categories do |place_category| %>
+          <%= place_category.input :category, collection: ["restaurant", "bar"] %>
+        <% end %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
